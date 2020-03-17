@@ -1,1 +1,1 @@
-# reddit-scraper
+# reddit-bot to pull list of posts
