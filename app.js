@@ -19,8 +19,14 @@ const r = new Snoowrap({
 //     console.log(comment)
 // })
 
-const postStream = new SubmissionStream(r, { subreddit: "AskReddit", limit: 10, pollTime: 2000 });
+const postStream = new SubmissionStream(r, { subreddit: "nba", limit: 10, pollTime: 2000 });
 
 postStream.on("item", post => {
-    console.log(post.title)
+	if(post.score > 5){
+		console.log("-----------------------------------------------");
+		console.log(`Post #` + post.id);
+		console.log(`Post Score: ${post.score}`);
+		console.log(`Post Title: ${post.title}`);
+    	console.log(`Post Text: ${post.selftext}`);
+	}
 })
